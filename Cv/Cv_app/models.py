@@ -1,0 +1,57 @@
+from django.db import models
+
+
+class Cv(models.Model):
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='cv')
+    address = models.TextField(blank=True)
+    email = models.EmailField(max_length=200)
+    phone = models.IntegerField(blank=True)
+    skill1 = models.CharField(max_length=100)
+    s_percent1 = models.IntegerField(range(1, 100))
+    skill2 = models.CharField(max_length=100, blank=True)
+    s_percent2 = models.IntegerField(range(1, 100))
+    skill3 = models.CharField(max_length=100, blank=True)
+    s_percent3 = models.IntegerField(range(1, 100), null=True, blank=True)
+    skill4 = models.CharField(max_length=100, blank=True)
+    s_percent4 = models.IntegerField(range(1, 100), null=True, blank=True)
+    language1 = models.CharField(max_length=100)
+    l_percent1 = models.IntegerField(range(1, 100))
+    language2 = models.CharField(max_length=100, blank=True)
+    l_percent2 = models.IntegerField(range(1, 100))
+    language3 = models.CharField(max_length=100, blank=True)
+    l_percent3 = models.IntegerField(range(1, 100), null=True, blank=True)
+    work1 = models.CharField(max_length=100)
+    work1_s = models.DateField(auto_now=False, auto_now_add=False)
+    work1_e = models.DateField(auto_now=False, auto_now_add=False)
+    work1_des = models.TextField(blank=True)
+    work2 = models.CharField(max_length=100, blank=True)
+    work2_s = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    work2_e = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    work2_des = models.TextField(blank=True)
+    work3 = models.CharField(max_length=100, blank=True)
+    work3_s = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    work3_e = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    work3_des = models.TextField(blank=True)
+    edu1 = models.CharField(max_length=100)
+    edu1_s = models.DateField(auto_now=False, auto_now_add=False)
+    edu1_e = models.DateField(auto_now=False, auto_now_add=False)
+    edu1_des = models.TextField(blank=True)
+    edu2 = models.CharField(max_length=100)
+    edu2_s = models.DateField(auto_now=False, auto_now_add=False)
+    edu2_e = models.DateField(auto_now=False, auto_now_add=False)
+    edu2_des = models.TextField(blank=True)
+    edu3 = models.CharField(max_length=100, blank=True)
+    edu3_s = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    edu3_e = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    edu3_des = models.TextField(blank=True)
+    fb = models.URLField(max_length=250, blank=True)
+    insta = models.URLField(max_length=250, blank=True)
+    linkdin = models.URLField(max_length=250, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+# Create your models here.

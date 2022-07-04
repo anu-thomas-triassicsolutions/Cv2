@@ -1,0 +1,71 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+<style>
+body {
+  background-image: url("{% static 'background.jpg' %}");
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 100px;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="2" >
+        <center><h1 id="logo" class="text-center"> My CV </h1></center>
+    </div>
+</header>
+
+
+<body>
+<br>
+<div class="container" >
+    <div class="row">
+        {% for i in cv %}
+        <div class="col-md-3">
+            <div class="card my_card" >
+                <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" height="212px;" weight="212px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.designation}}</p>
+                    <a href="{% url 'display' i.id %}" class="btn btn-primary">Show More</a>
+                </div>
+            </div><br>
+        </div>
+        {% endfor %}
+    </div>
+</div><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <center><a href="{% url 'add' %}" class="button">Add Your CV</a></center>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<center> <h2 > Update Your Cv Data </h2></center>
+<form method="POST" enctype="multipart/form-data" >
+  {% csrf_token %}
+    <center>
+    {{form.as_p}}
+    <input type="submit"></center>
+
+</form>
+
+
+{% endblock %}

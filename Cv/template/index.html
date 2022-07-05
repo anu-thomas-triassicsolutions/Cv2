@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <a href="{% url 'home' %}"> Back </a> <br>
-<a href="{% url 'update' anu.id %}"> Edit </a>
+<a href="{% url 'update' cv.id %}"> Edit </a>
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -14,57 +14,57 @@
 
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="{{anu.image.url}}" alt="{{anu.name}}" height="512px;" weight="512px;" >
+          <img src="{{cv.image.url}}" alt="{{cv.name}}" height="512px;" weight="512px;" >
           <div class="w3-display-bottomleft w3-container w3-text-black">
 
-            <h2>{{anu.name}}</h2>
+            <h2>{{cv.name}}</h2>
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>{{anu.designation}}</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>{{anu.address}}</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{anu.email}}</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{anu.phone}}</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>{{cv.designation}}</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>{{cv.address}}</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{cv.email}}</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{cv.phone}}</p>
           <hr>
 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>{{anu.skill1}}</p>
+          <p>{{cv.skill1}}</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{anu.s_percent1}}%">{{anu.s_percent1}}%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{cv.s_percent1}}%">{{cv.s_percent1}}%</div>
           </div>
-          <p>{{anu.skill2}}</p>
+          <p>{{cv.skill2}}</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{anu.s_percent2}}%">
-              <div class="w3-center w3-text-white">{{anu.s_percent2}}%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{cv.s_percent2}}%">
+              <div class="w3-center w3-text-white">{{cv.s_percent2}}%</div>
             </div>
           </div>
           {% if skill3 is True %}
-          <p>{{anu.skill3}}</p>
+          <p>{{cv.skill3}}</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{anu.s_percent3}}%">{{anu.s_percent3}}%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{cv.s_percent3}}%">{{cv.s_percent3}}%</div>
           </div>
           {% endif %}
           {% if skill4 is True %}
-          <p>{{anu.skill4}}</p>
+          <p>{{cv.skill4}}</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{anu.s_percent4}}%">{{anu.s_percent4}}%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{cv.s_percent4}}%">{{cv.s_percent4}}%</div>
           </div>
           {% endif %}
           <br>
 
           <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>{{anu.language1}}</p>
+          <p>{{cv.language1}}</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{anu.l_percent1}}%"></div>
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{cv.l_percent1}}%"></div>
           </div>
-          <p>{{anu.language2}}</p>
+          <p>{{cv.language2}}</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{anu.l_percent2}}%"></div>
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{cv.l_percent2}}%"></div>
           </div>
           {% if language3 is True %}
-          <p>{{anu.language3}}</p>
+          <p>{{cv.language3}}</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{anu.l_percent3}}%"></div>
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:{{cv.l_percent3}}%"></div>
           </div>
           {% endif %}
           <br>
@@ -80,24 +80,24 @@
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>{{anu.work1}}</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{anu.work1_s|date:'M Y'}} - {{anu.work1_e|date:'M Y'}}<span class="w3-tag w3-teal w3-round"></span></h6>
-          <p>{{anu.work1_des}}</p>
+          <h5 class="w3-opacity"><b>{{cv.work1}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cv.work1_s|date:'M Y'}} - {{cv.work1_e|date:'M Y'}}<span class="w3-tag w3-teal w3-round"></span></h6>
+          <p>{{cv.work1_des}}</p>
           <hr>
         </div>
         {% if work2 is True %}
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>{{anu.work2}}</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{anu.work2_s|date:'M Y'}} - {{anu.work2_e|date:'M Y'}}</h6>
-          <p>{{anu.work2_des}}</p>
+          <h5 class="w3-opacity"><b>{{cv.work2}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cv.work2_s|date:'M Y'}} - {{cv.work2_e|date:'M Y'}}</h6>
+          <p>{{cv.work2_des}}</p>
           <hr>
         </div>
         {% endif %}
         {% if work3 is True %}
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>{{anu.work3}}</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{anu.work3_s|date:'M Y'}} - {{anu.work3_e|date:'M Y'}}</h6>
-          <p>{{anu.work3_des}}</p><br>
+          <h5 class="w3-opacity"><b>{{cv.work3}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cv.work3_s|date:'M Y'}} - {{cv.work3_e|date:'M Y'}}</h6>
+          <p>{{cv.work3_des}}</p><br>
         </div>
         {% endif %}
       </div>
@@ -105,22 +105,22 @@
       <div class="w3-container w3-card w3-white">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>{{anu.edu1}}</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{anu.edu1_s|date:'M Y'}} - {{anu.edu1_e|date:'M Y'}}</h6>
-          <p>{{anu.edu1_des}}</p>
+          <h5 class="w3-opacity"><b>{{cv.edu1}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cv.edu1_s|date:'M Y'}} - {{cv.edu1_e|date:'M Y'}}</h6>
+          <p>{{cv.edu1_des}}</p>
           <hr>
         </div>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>{{anu.edu2}}</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{anu.edu2_s|date:'M Y'}} - {{anu.edu2_e|date:'M Y'}}</h6>
-          <p>{{anu.edu2_des}}</p>
+          <h5 class="w3-opacity"><b>{{cv.edu2}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cv.edu2_s|date:'M Y'}} - {{cv.edu2_e|date:'M Y'}}</h6>
+          <p>{{cv.edu2_des}}</p>
           <hr>
         </div>
         {% if edu3 is True %}
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>{{anu.edu3}}</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{anu.edu3_s|date:'M Y'}} - {{anu.edu3_e|date:'M Y'}}</h6>
-          <p>{{anu.edu3_des}}</p><br>
+          <h5 class="w3-opacity"><b>{{cv.edu3}}</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{cv.edu3_s|date:'M Y'}} - {{cv.edu3_e|date:'M Y'}}</h6>
+          <p>{{cv.edu3_des}}</p><br>
         </div>
         {% endif %}
       </div>
@@ -135,8 +135,8 @@
 </div>
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find me on social media.</p>
-  <a href="{{anu.fb}}"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-  <a href="{{anu.insta}}"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-  <a href="{{anu.linkdin}}"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="{{cv.fb}}"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <a href="{{cv.insta}}"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="{{cv.linkdin}}"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
 </footer>
 {% endblock %}

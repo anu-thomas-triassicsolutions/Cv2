@@ -18,7 +18,7 @@ def add(request):
 
 
 # update data in database
-def update(request,id):
+def update(request, id):
     move = Cv.objects.get(id=id)
     form = CvForm(request.POST or None, request.FILES, instance=move)
     if form.is_valid():
@@ -29,8 +29,8 @@ def update(request,id):
 
 # display data in detail
 def display(request, cv_id):
-    anu = Cv.objects.get(id=cv_id)
-    return render(request, 'index.html', {'anu': anu})
+    cv = Cv.objects.get(id=cv_id)
+    return render(request, 'index.html', {'cv': cv})
 
 
 # display home screen
